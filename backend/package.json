@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "react-speech-recognition": "^4.0.1",
+    "socket.io-client": "^4.8.1"
+  }
+}

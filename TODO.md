@@ -1,0 +1,9 @@
+- [x] Modify the get_recommendations function in backend/app.py to incorporate nutrition-based suggestions when user has nutrition goals set
+- [x] Add logic to filter items based on nutrition goals (goals / 3 for meal limits)
+- [x] Ensure items are filtered to exclude those containing user's allergies
+- [x] Sort suitable items by closeness to nutrition limits and pick top recommendation
+- [x] Test the updated recommendation logic
+- [x] Enhance get_recommendations to parse user messages for specific preferences like spiciness and calorie limits
+- [x] Add filtering logic for parsed preferences (e.g., spicy, under X calories)
+- [x] Integrate with existing allergy filtering
+- [x] Test the conversational recommendation feature
