@@ -1,0 +1,40 @@
+:root {
+  /* Premium Glassmorphism Palette */
+  --bg-dark: #0f0f1a;
+  --bg-deep: #050510;
+  --primary-accent: #00f3ff;
+  --secondary-accent: #bc13fe;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.2);
+  --text-primary: #ffffff;
+  --text-secondary: #a0a0b0;
+
+  /* Agent Colors */
+  --agent-nutrition: #4caf50;
+  --agent-menu: #ff9800;
+  --agent-order: #2196f3;
+  --agent-coord: #9c27b0;
+  --agent-sommelier: #E040FB;
+  --agent-reserve: #607D8B;
+
+  /* Typography */
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(188, 19, 254, 0.15) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.15) 0%, transparent 40%);
+  min-height: 100vh;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}

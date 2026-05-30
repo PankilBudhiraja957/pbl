@@ -1,0 +1,183 @@
+/* ── DineSmartAI Inbox Styles ── */
+
+.user-inbox-page {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.user-inbox-page h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #00f3ff, #b026ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.inbox-container {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: 1.5rem;
+    height: calc(100vh - 260px);
+    min-height: 500px;
+}
+
+@media (max-width: 768px) {
+    .inbox-container { grid-template-columns: 1fr; height: auto; }
+}
+
+.inbox-list {
+    background: rgba(10,10,15,0.85);
+    border: 1px solid rgba(0,243,255,0.1);
+    border-radius: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.inbox-list::-webkit-scrollbar { width: 4px; }
+.inbox-list::-webkit-scrollbar-thumb { background: rgba(0,243,255,0.2); border-radius: 2px; }
+
+.inbox-item {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(0,243,255,0.06);
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.inbox-item:last-child { border-bottom: none; }
+
+.inbox-item:hover {
+    background: rgba(0,243,255,0.05);
+}
+
+.inbox-item.selected {
+    background: rgba(0,243,255,0.08);
+    border-left: 3px solid #00f3ff;
+}
+
+.inbox-item.unread {
+    background: rgba(0,243,255,0.04);
+}
+
+.inbox-item.unread::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 4px; height: 40%;
+    background: #00f3ff;
+    border-radius: 0 2px 2px 0;
+}
+
+.inbox-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.4rem;
+}
+
+.inbox-item-header h3 {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.9);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.inbox-item.unread .inbox-item-header h3 {
+    color: #fff;
+}
+
+.timestamp {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.preview {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.4;
+}
+
+/* Message Detail Panel */
+.inbox-content {
+    background: rgba(10,10,15,0.85);
+    border: 1px solid rgba(0,243,255,0.1);
+    border-radius: 16px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.inbox-content::-webkit-scrollbar { width: 4px; }
+.inbox-content::-webkit-scrollbar-thumb { background: rgba(0,243,255,0.2); border-radius: 2px; }
+
+.no-selection {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 1rem;
+}
+
+.message-detail {
+    padding: 2rem;
+    flex: 1;
+}
+
+.message-detail h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    color: #00f3ff;
+    margin: 0 0 0.5rem;
+    line-height: 1.4;
+}
+
+.message-detail .timestamp {
+    display: block;
+    margin-bottom: 1.5rem;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.35);
+}
+
+.message-body {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(0,243,255,0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.message-body p {
+    color: rgba(255,255,255,0.8);
+    line-height: 1.7;
+    margin: 0 0 0.4rem;
+    font-size: 0.95rem;
+    font-family: 'Rajdhani', sans-serif;
+}
+
+.message-body p:empty { display: none; }
+
+/* Loading / Error */
+.inbox-loading, .inbox-error {
+    text-align: center;
+    padding: 6rem 2rem;
+    color: rgba(0,243,255,0.7);
+    font-size: 1rem;
+}
+
+.inbox-error { color: #ff3b7f; }
